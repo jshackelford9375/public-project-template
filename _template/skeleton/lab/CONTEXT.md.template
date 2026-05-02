@@ -1,0 +1,23 @@
+# Lab
+
+Sandbox/test environment config for {{PROJECT_NAME}}: hosts, VMs, containers, fixtures. Meant to be torn down and rebuilt - nothing here is precious.
+
+## File types
+- Provisioning scripts (`Build-*`, `New-*`, `provision-*`)
+- Inventory/manifest files (`<thing>-inventory_<date>.json|csv`)
+- Image/ISO/container manifests with version + hash
+
+## Rules
+- Environment creation is repeatable from one command + parameters file.
+- Images/ISOs tracked by version + hash. Stale ones archived, not deleted.
+- Every build produces a manifest of what was created.
+- No long-lived resources. If something needs persistence, it isn't lab.
+- No large binaries in this folder - keep a path reference; binaries live elsewhere.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_Active environments, recent rebuilds, anything torn down or pending. Update as work moves._

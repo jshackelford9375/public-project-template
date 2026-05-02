@@ -1,0 +1,27 @@
+# Integrations
+
+Connectors, webhook handlers, and mapping configs that wire {{PROJECT_NAME}} to third-party systems.
+
+## Layout
+- `<system-name>/` - one folder per integrated system
+  - `client.*` - code that talks to the system
+  - `mappings.*` - field-level mapping between our model and theirs
+  - `README.md` - auth model, rate limits, gotchas, on-call contact
+- `webhooks/` - inbound handlers, one file per source
+
+## Rules
+- Every integration documents: auth method, rate limits, retry policy, idempotency key, failure mode.
+- Credentials via the project's secret store. No tokens in source.
+- Inbound payload schemas live in `data/schemas/` if that room exists; otherwise alongside the handler.
+- Switching credentials is a config change, not a code change.
+- Handlers are idempotent on the source's idempotency key. Replays are safe.
+- New integrations follow the existing folder pattern. No bespoke layouts.
+- No silent retry loops that mask permanent failures.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_Which systems are wired, which are in flight, recent auth/key rotations. Update as work moves._

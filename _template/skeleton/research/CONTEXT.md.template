@@ -1,0 +1,26 @@
+# Research
+
+External sources, notes, interviews, and synthesis for {{PROJECT_NAME}}.
+
+## Layout
+- `sources/` - papers, articles, vendor docs (PDFs or links + summaries)
+- `notes/` - annotations, organized by source or topic
+- `interviews/` - transcripts and summaries
+- `themes/` - synthesis: patterns and findings across sources
+- `drafts/` - early writing that may move to `content/` or `planning/`
+
+## Rules
+- Every source has a citation: author, title, year, URL or DOI, date accessed.
+- Notes link back to the source they came from.
+- Direct quotes are clearly marked and attributed. No paraphrasing without attribution.
+- Themes written in your own words, not stitched-together quotes.
+- Capture a one-line summary on the day you add a source. Don't let unread sources pile up.
+- Stale or contradicted sources are marked, not deleted.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_Themes in progress, sources still to read, drafts in flight. Update as work moves._

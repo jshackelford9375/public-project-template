@@ -1,0 +1,25 @@
+# Engineering
+
+Application or library source code for {{PROJECT_NAME}}.
+
+## Layout
+- `src/` - production source
+- `tests/` - unit and integration tests
+- Build/package config at room root (`package.json`, `pyproject.toml`, `*.csproj`, etc.)
+
+## Rules
+- Language: {{ENGINEERING_LANGUAGE}}, idiomatic style.
+- Tests run from a single command. CI runs the same command.
+- Dependencies pinned. Lockfile checked in.
+- No secrets in source. Config via env vars or a secret store.
+- Public surface area documented; internal helpers don't need it.
+- Build is reproducible. Errors fail fast at boundaries with actionable messages.
+- One-off scripts go in `reference/` or `automation/`, not here.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_What's working, what's in progress, what's broken. Active refactors or migrations. Update as work moves._

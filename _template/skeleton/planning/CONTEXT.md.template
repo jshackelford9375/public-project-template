@@ -1,0 +1,28 @@
+# Planning
+
+Specs, ADRs, and design discussion for {{PROJECT_NAME}}. Thinking room - no code lives here.
+
+## Templates
+Copy from `templates/`, rename, and fill in. Don't edit the templates themselves.
+- `templates/spec-template.md` - feature/component specs
+- `templates/adr-template.md` - architecture decisions
+
+## File types
+- `*-spec_draft.md` / `*-spec_final.md` - design specs
+- `adr-NNN-<topic>_<status>.md` - architecture decision records (numbered, dated, context > decision > consequences)
+- `*.mmd` or fenced ` ```mermaid ` blocks - diagrams
+
+## Rules
+- Specs name the problem, the chosen approach, and what was rejected and why.
+- ADRs are dated and numbered sequentially.
+- No implementation code in specs - that belongs in a build room.
+- Anything > ~50 lines of code needs a spec or ADR here first.
+- Promotion trigger: when an item appears in two `Promotion candidates` tables across rooms, formalize it as a skill, agent, or shared module.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_What's drafted, what's in progress, what's blocked. Update as work moves._

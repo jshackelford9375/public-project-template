@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "{{PROJECT_NAME}}",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true
+    }
+  },
+  "extensions": {
+    "recommendations": []
+  }
+}

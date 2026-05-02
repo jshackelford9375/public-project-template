@@ -1,0 +1,27 @@
+# Reporting
+
+Generators, templates, and rendered output - the public deliverable of {{PROJECT_NAME}}.
+
+## Layout
+- Report generator script(s) at the room root
+- `templates/` - HTML/Markdown/PDF scaffolds
+- `samples/` - preserved sample reports per run
+- `YYYY-MM-DD_<topic>_<status>.<ext>` - the deliverable for a given run
+
+## Required data points per record
+{{REPORT_REQUIRED_FIELDS}}
+
+## Rules
+- One file = one run, fully self-contained (no external CDN deps for HTML reports).
+- Parse and render are separate steps. The generator does not parse.
+- No live database deps - reports are static snapshots.
+- No hard-coded paths or run identifiers in templates.
+- Reports must open correctly when emailed or posted to a wiki/SharePoint.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_Latest run, known issues, templates in flight. Update as work moves._

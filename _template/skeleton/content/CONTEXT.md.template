@@ -1,0 +1,29 @@
+# Content
+
+Written or media content - the deliverable of {{PROJECT_NAME}}.
+
+## Layout
+- `briefs/` - what we're making and why, per piece
+- `drafts/` - work-in-progress
+- `final/` - shipped pieces, dated
+- `assets/` - images, audio, video used by pieces
+
+## Voice and audience
+_Define once here, apply every time:_
+- Voice: TBD
+- Audience: TBD
+
+## Rules
+- File status in the filename: `_draft`, `_review`, `_final`.
+- Date-stamp anything tied to a publication date.
+- Drafts get reviewed before they become final. Status in filename matches reality.
+- Don't edit `_final` in place. Bump the version.
+- Don't mix brief, draft, and final in one file.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_Pieces in flight, upcoming publication dates, anything stuck in review. Update as work moves._

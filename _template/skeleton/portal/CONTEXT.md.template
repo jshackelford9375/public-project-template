@@ -1,0 +1,34 @@
+# Portal / App
+
+User-facing application for {{PROJECT_NAME}}: {{PORTAL_PURPOSE}}.
+
+## Stack (proposed - confirm in an ADR before locking in)
+- Hosting: {{PORTAL_HOSTING}}
+- Auth: {{PORTAL_AUTH}}
+- Frontend: {{PORTAL_FRONTEND}}
+- Backend: {{PORTAL_BACKEND}}
+- Storage: {{PORTAL_STORAGE}}
+- IaC: {{PORTAL_IAC}}
+
+## Layout
+- `src/` - frontend code
+- `api/` - backend functions/endpoints
+- `auth/` - identity provider notes, scopes, redirect URIs
+- `deploy/` - pointers to the IaC modules (deployment lives in `automation/iac/portal/` if that room exists)
+
+## Rules
+- Sign-in scoped to the intended audience. Outsiders rejected.
+- Every state-changing action logged with the calling user's identity.
+- Read-only by default. Destructive actions require explicit confirm.
+- No secrets in frontend code. Backend pulls from a secret store via managed identity or equivalent.
+- No tokens in localStorage. Use HTTP-only cookies or in-memory only.
+- No custom auth. Use a vetted library for the identity provider.
+- Frontend talks to backend through the API layer, not directly to lab/automation.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_What's deployed, what's in progress, what's broken. Auth/deploy status. Update as work moves._

@@ -1,0 +1,75 @@
+# {{PROJECT_NAME}}
+
+## What we are building
+{{PROJECT_ONE_LINER}}
+
+{{PROJECT_LONG_DESCRIPTION}}
+
+## Success criteria
+{{SUCCESS_CRITERIA}}
+
+## Stack
+GitHub Copilot in VS Code on Windows. PowerShell default shell (CI may run PS 5.1; local is PS 7). For capability details (skills, instructions files, MCP, memory, subagents), see [reference/ai-capabilities-field-manual_v2.md](reference/ai-capabilities-field-manual_v2.md).
+
+## Tech stack (this project)
+{{TECH_STACK}}
+
+## Folder structure
+```
+{{PROJECT_SLUG}}/
+├── CLAUDE.md                        # this file - always loaded
+├── README.md
+├── {{PROJECT_SLUG}}.code-workspace
+├── planning/                        # specs, ADRs, diagrams (always present)
+├── runbooks/                        # operational procedures
+├── reference/                       # examples, snippets, vendor docs
+├── .claude/skills/
+├── .claude/agents/
+{{ROOMS_TREE}}
+```
+
+## Task routing
+| Your task | Go here | Also load |
+|-----------|---------|-----------|
+| Design a system, write a spec or ADR | `planning/CONTEXT.md` | `planning/templates/` for the right template |
+{{ROUTING_ROWS}}
+| Run an operational procedure | `runbooks/CONTEXT.md` | The specific runbook only |
+| Look up a tool, library, or MCP server | `reference/resource-index_v2.md` | - |
+| Look up an AI capability or limit | `reference/ai-capabilities-field-manual_v2.md` | - |
+
+Each room has its own `CONTEXT.md` with the rules for that room. Load it when working in that room; skip the others.
+
+## Rooms in this project
+{{ROOMS_TABLE}}
+
+## Commands
+{{COMMANDS_TABLE}}
+
+## Naming
+Pattern: `description_status.extension`. Markdown/HTML use kebab-case. Date-stamp run-tied artifacts: `YYYY-MM-DD_<topic>_<status>.<ext>`. Code uses language idiom (PowerShell `Verb-Noun.ps1`, Python `snake_case.py`).
+
+## Rules
+- Plain language. Ask before assuming. Say so when unsure.
+- Prefer editing existing files. Don't create docs to summarize work - say it in chat.
+- Verify before declaring done. Run the actual command or test.
+- No credentials, tenant/subscription/account IDs, or hostnames in source. Parameterize.
+- Auto-push to `origin/main` after every commit unless told otherwise. Check `git status` first.
+- ASCII only in `.ps1` / `.psm1` / `.psd1`. PS 5.1 in CI mangles non-ASCII.
+
+## Avoid
+{{AVOID}}
+
+## Skills (`.claude/skills/`)
+| Skill | When invoked |
+|-------|--------------|
+{{PROJECT_SKILLS_TABLE}}
+
+## Subagents (`.claude/agents/`)
+| Agent | When invoked |
+|-------|--------------|
+| `powershell-reviewer` | Review of `.ps1` / `.psm1` / `.psd1` files |
+| `terraform-reviewer` | Review of `.tf` / `.tfvars` / `.hcl` files |
+| `Explore` (built-in) | Read-only codebase Q&A; supports `quick` / `medium` / `thorough` |
+
+## Owner
+{{OWNER}}

@@ -1,0 +1,27 @@
+# Baseline .gitignore for new projects bootstrapped from project_template.
+# The INIT-PROMPT agent appends stack-specific entries below the marker.
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / temp
+*.bak
+*.tmp
+*.swp
+*~
+.history/
+
+# Logs
+*.log
+
+# Local secrets - never commit
+*.env
+.env.*
+!.env.example
+secrets/
+*.pfx
+*.key
+
+# === STACK-SPECIFIC (agent appends below this line) ===

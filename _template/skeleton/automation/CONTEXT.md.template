@@ -1,0 +1,24 @@
+# Automation
+
+Scripts and Infrastructure-as-Code that drive the {{PROJECT_NAME}} pipeline. Production code room for ops/automation work.
+
+## Layout
+- Scripts at the room root or grouped by purpose.
+- IaC under `iac/` - modules in `iac/modules/`, per-env roots in `iac/envs/<env>/`. Remote state only.
+
+## Rules
+- Language: {{AUTOMATION_LANGUAGE}}, idiomatic style.
+- Parameterize everything. No hard-coded paths, names, IDs, or credentials.
+- Idempotent: re-running converges.
+- Secrets via the project's secret store or env vars.
+- Each script has a header (purpose, parameters, expected output) and a dry-run path (`-WhatIf`, `--dry-run`, `terraform plan`).
+- Errors throw with actionable messages. No silent swallow.
+- One-off snippets go in `reference/`, not here.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_What's working, what's in progress, what's broken. Active refactors or migrations. Update as work moves._

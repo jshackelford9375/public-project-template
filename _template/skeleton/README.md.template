@@ -1,0 +1,17 @@
+# {{PROJECT_NAME}}
+
+{{PROJECT_ONE_LINER}}
+
+## Getting started
+
+1. Open `{{PROJECT_SLUG}}.code-workspace` in VS Code.
+2. Read `CLAUDE.md` for the project map and `planning/CONTEXT.md` for the current spec/ADR queue.
+
+## Tech stack
+{{TECH_STACK}}
+
+## Owner
+{{OWNER}}
+
+## Status
+{{DATE}} - scaffolded.

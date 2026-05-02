@@ -1,0 +1,25 @@
+# Data
+
+Datasets, parsers, transformations, and schemas for {{PROJECT_NAME}}.
+
+## Layout
+- `raw/` - untouched source data (or pointers; large data lives elsewhere)
+- `schemas/` - JSON Schema / Pydantic / type definitions for every contract
+- `parsers/` - raw input -> structured output
+- `samples/` - small representative fixtures used in tests and reviews
+
+## Rules
+- Every input format has a documented schema.
+- Parsers are pure where possible: input in, structured output out, no side effects.
+- Sample data is anonymized. No real customer/user data in source control.
+- Output schemas are versioned. Breaking changes get a new version.
+- Tests cover the malformed-input case for every parser.
+- No large binary datasets in the repo.
+
+## Promotion candidates
+| Date | What I did | Why it might be reusable |
+|------|------------|--------------------------|
+| _example_ | - | - |
+
+## Current state
+_Which datasets/parsers are in place, schema versions, anything in flight. Update as work moves._
