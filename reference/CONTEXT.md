@@ -4,9 +4,15 @@
 Working-but-rough snippets, vendor docs, cheat sheets, and how-to guides. Treat everything in this folder as **examples to learn from, not code to ship**. Artifacts here are kept around because they show one workable approach to a problem, not because they're the right approach.
 
 ## Current contents
-- `folder-organization-guide.md` — the three-layer (map / rooms / skills) workspace pattern this repo is built on. Read this before reorganizing folders or creating a new room archetype.
-- `resource-index_v2.md` — curated repos, MCP servers, SDKs, and tools for the Microsoft / Azure / PowerShell / Terraform / IAM / SaaS / security stack. Tag-frontmattered for AI lookup.
-- `ai-capabilities-field-manual_v2.md` — the ten AI capabilities available in this workspace via GitHub Copilot in VS Code (workspace map, skills, instructions files, MCP, memory, subagents, prompt files, terminal/edit, notebooks, model selection). Decision sequence and quick-reference table at the bottom.
+_Empty by default._ Add project-specific reference material here as the project takes shape: vendor docs you depend on, cheat sheets, configuration examples, working snippets too rough to ship.
+
+## Where to look first (external)
+For things that change too fast to ship as a frozen file:
+- **GitHub Copilot agent mode capabilities** — [code.visualstudio.com/docs/copilot](https://code.visualstudio.com/docs/copilot)
+- **Claude Code CLI capabilities** — [code.claude.com/docs](https://code.claude.com/docs/)
+- **Tool, library, or MCP server lookup** — official registries / vendor docs / [github.com/modelcontextprotocol](https://github.com/modelcontextprotocol)
+
+If a project starts referring to the same external doc repeatedly, save the relevant excerpt here with a date stamp and a link to the source.
 
 ## How to use these examples
 1. Read the existing artifact to understand the pattern and the failure modes.

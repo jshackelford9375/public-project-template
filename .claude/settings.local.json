@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:code.visualstudio.com)",
+      "WebSearch",
+      "WebFetch(domain:4sysops.com)"
+    ]
+  }
+}

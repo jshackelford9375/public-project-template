@@ -24,4 +24,8 @@ secrets/
 *.pfx
 *.key
 
+# AI harness local state - never commit
+# Claude Code CLI writes user-specific permissions and grants here.
+.claude/settings.local.json
+
 # === STACK-SPECIFIC (agent appends below this line) ===

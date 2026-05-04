@@ -1,6 +1,11 @@
 # INIT prompt - turn this template into a project workspace
 
-Paste this whole file into a chat **after copying this repo to a new folder**. The agent will fill placeholders, prune rooms you don't need, promote the skeleton to the repo root, and delete `_template/`. Result: a standalone project ready for `git init` and a new remote.
+After copying this repo to a new folder, ask your agent to follow this file. Either of these phrasings works:
+
+- `Read _template/INIT-PROMPT.md and help me start a new project.`
+- `Review _template/INIT-PROMPT.md and run the flow.`
+
+Works in Claude Code CLI or GitHub Copilot agent mode - both read local files, so there's no need to paste the contents. The agent will fill placeholders, prune rooms you don't need, promote the skeleton to the repo root, and delete `_template/`. Result: a standalone project ready for `git init` and a new remote.
 
 ---
 
@@ -77,6 +82,47 @@ Fill these from the confirmed proposal. If the room is being pruned, the placeho
 | `{{PORTAL_STORAGE}}` | `portal/` | Persistence (e.g. `Cosmos DB`, `Azure Table Storage`, `none`) |
 | `{{PORTAL_IAC}}` | `portal/` | IaC tool + module location (e.g. `OpenTofu, automation/iac/portal/`) |
 | `{{REPORT_REQUIRED_FIELDS}}` | `reporting/` | Bullet list of required fields per report record |
+
+## Placeholder format examples
+
+Three placeholders need exact-format markdown fragments. Subtle errors (wrong tree connector, missing pipe, blank line in a table) break the rendered file. Match the shape below exactly when filling.
+
+### `{{ROOMS_TREE}}`
+
+Continues the existing tree in the `## Folder structure` code block. The first kept room uses `├──`; the **last kept room** uses `└──`. Align the trailing comment column (4+ spaces).
+
+For a project that kept `automation/`, `reporting/`, and `lab/`:
+
+```
+├── automation/                      # PowerShell + OpenTofu for Azure ops
+├── reporting/                       # weekly fleet-health report (the deliverable)
+└── lab/                             # sandbox VMs for testing
+```
+
+### `{{ROUTING_ROWS}}`
+
+Pipe-table rows that slot between the existing `planning/` row and the `runbooks/` row in the `## Task routing` table. One row per kept room. No leading or trailing blank lines.
+
+For the same three rooms:
+
+```
+| Write or run an automation script / IaC | `automation/CONTEXT.md` | The script's own header; `automation/iac/` for IaC |
+| Generate a report | `reporting/CONTEXT.md` | `reporting/templates/` for the right report shape |
+| Provision or tear down sandbox infra | `lab/CONTEXT.md` | The matching provisioning script |
+```
+
+### `{{ROOMS_TABLE}}`
+
+Full markdown table (header + separator + rows) under the `## Rooms in this project` heading. Include `planning/` since it's always kept.
+
+```
+| Room | Purpose |
+|------|---------|
+| `planning/` | Specs, ADRs, design discussion. Always present. |
+| `automation/` | PowerShell + OpenTofu scripts that drive the Azure ops pipeline. |
+| `reporting/` | Generators and templates for the weekly fleet-health report. |
+| `lab/` | Sandbox VM and image provisioning for pre-prod testing. |
+```
 
 ## Hard rules
 

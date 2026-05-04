@@ -9,7 +9,7 @@
 {{SUCCESS_CRITERIA}}
 
 ## Stack
-GitHub Copilot in VS Code on Windows. PowerShell default shell (CI may run PS 5.1; local is PS 7). For capability details (skills, instructions files, MCP, memory, subagents), see [reference/ai-capabilities-field-manual_v2.md](reference/ai-capabilities-field-manual_v2.md).
+GitHub Copilot agent mode in VS Code is the primary harness on Windows. Claude Code CLI also works — the `.claude/` files in this repo (`.claude/agents/`, `.claude/skills/`, `CLAUDE.md`) are read by both harnesses. Per-harness config lives in `.vscode/settings.json` (Copilot terminal allow-list) and `.claude/settings.json` if present (Claude Code hooks/permissions). PowerShell default shell (CI may run PS 5.1; local is PS 7). For capability details (skills, instructions files, MCP, memory, subagents), check the official docs - [code.visualstudio.com/docs/copilot](https://code.visualstudio.com/docs/copilot) for Copilot agent mode or [code.claude.com/docs](https://code.claude.com/docs/) for Claude Code CLI - they're always current.
 
 ## Tech stack (this project)
 {{TECH_STACK}}
@@ -31,11 +31,11 @@ GitHub Copilot in VS Code on Windows. PowerShell default shell (CI may run PS 5.
 ## Task routing
 | Your task | Go here | Also load |
 |-----------|---------|-----------|
+| Find something or get oriented in the codebase | (codebase-wide) | Invoke the `Explore` subagent (Claude Code CLI) or ask in chat (Copilot) |
 | Design a system, write a spec or ADR | `planning/CONTEXT.md` | `planning/templates/` for the right template |
 {{ROUTING_ROWS}}
 | Run an operational procedure | `runbooks/CONTEXT.md` | The specific runbook only |
-| Look up a tool, library, or MCP server | `reference/resource-index_v2.md` | - |
-| Look up an AI capability or limit | `reference/ai-capabilities-field-manual_v2.md` | - |
+| Look up an AI capability or limit | (external docs) | Copilot: [code.visualstudio.com/docs/copilot](https://code.visualstudio.com/docs/copilot); Claude Code CLI: [code.claude.com/docs](https://code.claude.com/docs/) |
 
 Each room has its own `CONTEXT.md` with the rules for that room. Load it when working in that room; skip the others.
 
@@ -53,7 +53,7 @@ Pattern: `description_status.extension`. Markdown/HTML use kebab-case. Date-stam
 - Prefer editing existing files. Don't create docs to summarize work - say it in chat.
 - Verify before declaring done. Run the actual command or test.
 - No credentials, tenant/subscription/account IDs, or hostnames in source. Parameterize.
-- Auto-push to `origin/main` after every commit unless told otherwise. Check `git status` first.
+- Don't push commits unless asked. When asked, run `git status` first and confirm the remote + target branch before pushing.
 - ASCII only in `.ps1` / `.psm1` / `.psd1`. PS 5.1 in CI mangles non-ASCII.
 
 ## Avoid
@@ -69,7 +69,7 @@ Pattern: `description_status.extension`. Markdown/HTML use kebab-case. Date-stam
 |-------|--------------|
 | `powershell-reviewer` | Review of `.ps1` / `.psm1` / `.psd1` files |
 | `terraform-reviewer` | Review of `.tf` / `.tfvars` / `.hcl` files |
-| `Explore` (built-in) | Read-only codebase Q&A; supports `quick` / `medium` / `thorough` |
+| `Explore` (built-in, Claude Code CLI only) | Read-only codebase Q&A; supports `quick` / `medium` / `thorough` |
 
 ## Owner
 {{OWNER}}

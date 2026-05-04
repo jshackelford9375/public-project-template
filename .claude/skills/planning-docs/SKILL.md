@@ -28,7 +28,11 @@ The templates are at:
 - `_template/skeleton/planning/templates/adr-template.md`
 - `_template/skeleton/planning/templates/spec-template.md`
 
-In a project that has been INIT'd, the same files live at `planning/templates/`. Use whichever path exists.
+Worked examples (filled-in references) sit beside the templates at:
+- `_template/skeleton/planning/templates/adr-example.md`
+- `_template/skeleton/planning/templates/spec-example.md`
+
+In a project that has been INIT'd, the same files live at `planning/templates/`. Use whichever path exists. Read the example first when you need a sense of the right level of detail; copy from the *template* (not the example) when starting a new doc.
 
 ## Templates (canonical structure)
 
@@ -158,5 +162,7 @@ Report findings as a bulleted list. Don't rewrite the doc unless asked.
 ## Source files
 - [_template/skeleton/planning/templates/adr-template.md](../../../_template/skeleton/planning/templates/adr-template.md)
 - [_template/skeleton/planning/templates/spec-template.md](../../../_template/skeleton/planning/templates/spec-template.md)
+- [_template/skeleton/planning/templates/adr-example.md](../../../_template/skeleton/planning/templates/adr-example.md)
+- [_template/skeleton/planning/templates/spec-example.md](../../../_template/skeleton/planning/templates/spec-example.md)
 
 When the templates change, update this skill — the skill is what the agent reads at runtime.

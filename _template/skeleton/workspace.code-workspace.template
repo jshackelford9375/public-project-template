@@ -11,6 +11,12 @@
     }
   },
   "extensions": {
-    "recommendations": []
+    "recommendations": [
+      "ms-vscode.PowerShell",
+      "hashicorp.terraform",
+      "yzhang.markdown-all-in-one",
+      "bierner.markdown-mermaid",
+      "EditorConfig.EditorConfig"
+    ]
   }
 }

@@ -1,0 +1,21 @@
+{
+  // Auto-approve read-only commands so Copilot agent mode doesn't pause to ask.
+  // Format: regex keys (wrapped in /.../) -> true (approve) | false (deny).
+  // Anything not matched falls back to the normal confirmation dialog.
+  // Reference: https://code.visualstudio.com/docs/copilot/chat/chat-tools
+  //
+  // Conservative defaults only - read-only inspection commands. Add stack-specific
+  // entries here (e.g. "terraform plan", "npm list", "az account show") as the
+  // project takes shape. Always leave destructive commands to fall through to a
+  // prompt; never blanket-approve "git push", "rm", "Remove-Item", or anything
+  // that mutates state outside this repo.
+  "chat.tools.terminal.autoApprove": {
+    "/^git\\s+(status|diff|log|show|branch|remote(\\s+-v)?|rev-parse|config\\s+--get)\\b/": true,
+    "/^Get-ChildItem\\b/": true,
+    "/^ls\\b/": true,
+    "/^dir\\b/": true,
+    "/^pwsh\\s+--version\\b/": true,
+    "/^node\\s+--version\\b/": true,
+    "/^python\\s+(--version|-V)\\b/": true
+  }
+}
